@@ -1,0 +1,9 @@
+
+a{
+    text-decoration: none;
+    color: #2b2b2b;
+}
+.main-box{
+    float: left;
+    overflow: hidden;
+}
