@@ -3,12 +3,16 @@
 {% block content %}
 
         <div>
-            <h3>{{post.title}}</h3>
-            작성자 : {{post.writer}}
-            날짜 : {{post.pub_date}}
+            <h3>{{blog.title}}</h3>
+            작성자 : {{blog.writer}}
+            날짜 : {{blog.pub_date}}
             <hr>
-            <p>{{post.body}}</p>
-            
+            {% if blog.image %}
+                <p><img src="{{ blog.image.url }}" alt="사진"></p>
+            {% endif %}
+            <p>{{blog.body}}</p>
+            <a href="{%url 'main:edit' blog.id%}">수정하기</a>
+            <a href="{%url 'main:delete' blog.id%}">삭제하기</a>
         </div>
       
     

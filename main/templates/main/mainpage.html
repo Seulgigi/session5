@@ -24,19 +24,19 @@
                 </p>
                 <p style="font-size: 20px; margin-bottom: 30px;">02.12.05</p>
                 <p style="font-size: 20px; margin-bottom: 30px;"><a href="https://www.instagram.com/slg__i/">slg__i</a></p>
-                <p style="font-size: 20px; margin-bottom: 30px;"><a href="{% url 'firstpage' %}">SNS_PROJECT</a></p>
+                <p style="font-size: 20px; margin-bottom: 30px;"><a href="{% url 'main:firstpage' %}">SNS_PROJECT</a></p>
                 <p style="font-size: 20px; margin-bottom: 30px;">slki1205@naver.com</p>
                 <p style="font-size: 20px; margin-bottom: 30px;">+82 2549 3017</p>
             </div>
             <div>
-                <h2><a href="{% url 'new' %}">write</a></h2>
+                <h2><a href="{% url 'main:new' %}">write</a></h2>
                 <h1>list</h1>
-                {% for post in posts %}
+                {% for blog in blogs %}
                 <div>
-                    <p>{{post.title}}</p>
-                    {{post.writer}}<br>
-                    {{post.summary}}
-                    <a href="{% url 'detail' post.id %}">...자세히</a><br>
+                    <p>{{blog.title}}</p>
+                    {{blog.writer}}<br>
+                    {{blog.summary}}
+                    <a href="{% url 'main:detail' blog.id %}">...자세히</a><br>
                 </div>
                 {% endfor %}
             </div>
